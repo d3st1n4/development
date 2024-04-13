@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Work on English Essay",
+    "dateAdded": "3/20/2024",
+    "completeBy": "4/21/2024",
+    "category": "Assignments",
+    "image": "/images/864685.png",
+    "backgroundColor": "rgba(255, 200, 200, 1)",
+    "imageBackgroundColor": "rgba(255, 143, 143, 1)"
+  },
+  {
+    "name": "Change CS1300 to S/NC",
+    "dateAdded": "3/25/2024",
+    "completeBy": "4/9/2024",
+    "category": "Reminders",
+    "image": "/images/1950715.png",
+    "backgroundColor": "rgba(164, 236, 240, 1)",
+    "imageBackgroundColor": "rgba(0, 237, 250, 1)"
+  },
+  {
+    "name": "Black Star Journal GBM",
+    "dateAdded": "3/25/2024",
+    "completeBy": "5/9/2024",
+    "category": "Events",
+    "image": "/images/calendar_event_icon_151492.png",
+    "backgroundColor": "rgba(239, 187, 139, 1)",
+    "imageBackgroundColor": "rgba(255, 138, 30, 1)"
+  },
+  {
+    "name": "Check out Beloved from the Rock",
+    "dateAdded": "2/20/2024",
+    "completeBy": "6/13/2024",
+    "category": "Reminders",
+    "image": "images/1950715.png",
+    "backgroundColor": "rgba(204, 238, 188, 1)",
+    "imageBackgroundColor": "rgba(98, 217, 41, 1)"
+  },
+  {
+    "name": "Book doctor's appointment",
+    "dateAdded": "1/2/2023",
+    "completeBy": "5/30/2024",
+    "category": "Reminders",
+    "image": "/images/1950715.png",
+    "backgroundColor": "rgba(238, 188, 218, 1)",
+    "imageBackgroundColor": "rgba(244, 28, 158, 1)"
+  },
+  {
+    "name": "Math Midterm 1",
+    "dateAdded": "2/29/2024",
+    "completeBy": "3/25/2024",
+    "category": "Assignments",
+    "image": "/images/864685.png",
+    "backgroundColor": "rgba(255, 230, 167, 1)",
+    "imageBackgroundColor": "rgba(255, 187, 13, 1)"
+  },
+  {
+    "name": "Study for CS200 Midterm",
+    "dateAdded": "3/28/2024",
+    "completeBy": "4/5/2024",
+    "category": "Reminders",
+    "image": "/images/1950715.png",
+    "backgroundColor": "rgba(255, 200, 200, 1)",
+    "imageBackgroundColor": "rgba(255, 143, 143, 1)"
+  },
+  {
+    "name": "Schedule meeting with advisor",
+    "dateAdded": "10/23/2023",
+    "completeBy": "12/2/2023",
+    "category": "Reminders",
+    "image": "/images/1950715.png",
+    "backgroundColor": "rgba(164, 236, 240, 1)",
+    "imageBackgroundColor": "rgba(0, 237, 250, 1)"
+  },
+  {
+    "name": "Make e-board group chat",
+    "dateAdded": "3/17/2024",
+    "completeBy": "5/14/2024",
+    "category": "Reminders",
+    "image": "/images/1950715.png",
+    "backgroundColor": "rgba(239, 187, 139, 1)",
+    "imageBackgroundColor": "rgba(255, 138, 30, 1)"
+  },
+  {
+    "name": "ML project due",
+    "dateAdded": "2/29/2024",
+    "completeBy": "4/9/2024",
+    "category": "Assignments",
+    "image": "/images/864685.png",
+    "backgroundColor": "rgba(204, 238, 188, 1)",
+    "imageBackgroundColor": "rgba(98, 217, 41, 1)"
+  },
+  {
+    "name": "Mentee meeting",
+    "dateAdded": "10/23/2023",
+    "completeBy": "4/9/2024",
+    "category": "Events",
+    "image": "/images/calendar_event_icon_151492.png",
+    "backgroundColor": "rgba(238, 188, 218, 1)",
+    "imageBackgroundColor": "rgba(244, 28, 158, 1)"
+  },
+  {
+    "name": "Google interview",
+    "dateAdded": "3/25/2024",
+    "completeBy": "4/9/2024",
+    "category": "Events",
+    "image": "/images/calendar_event_icon_151492.png",
+    "backgroundColor": "rgba(255, 230, 167, 1)",
+    "imageBackgroundColor": "rgba(255, 187, 13, 1)"
+  }
+]

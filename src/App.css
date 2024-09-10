@@ -1,10 +1,173 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap");
 
+body {
+  overflow: hidden;
+}
+
 .App {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  z-index: 2;
+}
+
+.control-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-ctr {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 60%;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  z-index: 1; /* Ensure dropdowns are above main content */
+  padding-left: 50px;
+  padding-right: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #379937;
+}
+
+body {
+  margin: 40px;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 10;
+  font-size: 14px;
+  color: #333;
+  width: 200px;
+
+  .dropdown-list {
+    position: absolute;
+    top: calc(100% + 5px); /* Position below dropdown label */
+    left: 0;
+    z-index: 10; /* Ensure dropdown list is above other content */
+    max-height: 66vh;
+    overflow-y: auto;
+  }
+
+  .dropdown.on .dropdown-list {
+    display: block; /* Show dropdown list when dropdown is active */
+    opacity: 1;
+    visibility: visible;
+    background-color: #fff;
+  }
+
+  .dropdown-option {
+    display: block;
+    padding: 8px 12px;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  .dropdown.on .dropdown-option {
+    opacity: 1; /* Fade in dropdown options when dropdown is active */
+  }
+
+  .dropdown-label {
+    display: block;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 20px;
+
+    &:before {
+      content: "▼";
+      float: right;
+    }
+  }
+
+  &.on {
+    .dropdown-list {
+      transform: scale(1, 1);
+      transition-delay: 0s;
+      background: #fff;
+      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+
+      .dropdown-option {
+        opacity: 1;
+        transition-delay: 0.2s;
+      }
+    }
+
+    .dropdown-label:before {
+      content: "▲";
+    }
+  }
+
+  [type="checkbox"] {
+    position: relative;
+    top: -1px;
+    margin-right: 4px;
+  }
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  transform: translateY(3px);
+  border: 0.5px solid rgba(129, 128, 128, 0.267);
+  display: inline-block;
+}
+
+#coral {
+  background-color: rgba(255, 200, 200, 1);
+}
+
+#blue {
+  background-color: rgba(164, 236, 240, 1);
+}
+
+#pink {
+  background-color: rgba(238, 188, 218, 1);
+}
+
+#orange {
+  background-color: rgba(239, 187, 139, 1);
+}
+
+#green {
+  background-color: rgba(204, 238, 188, 1);
+}
+
+#yellow {
+  background-color: rgba(255, 230, 167, 1);
+}
+
+.main-cont {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .pacifico-regular {
@@ -25,123 +188,8 @@
   font-style: normal;
 }
 
-#navbar {
-  display: flex;
-  position: relative;
-  justify-content: space-evenly;
-  padding: 20px;
-  width: 40%;
-  background-color: rgba(200, 200, 200, 1);
-  border-radius: 20px;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.dropbtn {
-  background-color: #ffffff00;
-  padding: 10px;
-  font-size: 28px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-content .nested-dropdown .dropdown-menu,
-.dropdown-content .color-filter .dropdown-menu {
-  display: none;
-}
-
-.category-filter:hover + .dropdown-menu.category-menu {
-  display: block;
-}
-
-.color-filter:hover + .dropdown-menu.color-menu {
-  display: block;
-}
-
-.dropdown-menu.color-menu {
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown-content {
-  font-size: 20px;
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  padding: 12px 0;
-  top: 100%; /* Position dropdown content below button */
-  left: 0;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a.selected {
-  background-color: #ddd;
-}
-
-.dropdown-content a.selected::after {
-  content: "\2713"; /* Unicode character for checkmark */
-  float: right;
-}
-
-.dropdown-menu a.selected::after {
-  content: "\2713"; /* Unicode character for checkmark */
-  float: right;
-}
-
-.color-option.select::after {
-  content: "\2713"; /* Unicode character for checkmark */
-  float: right;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  text-decoration: underline;
-  text-decoration-color: rgb(85, 163, 220);
-}
-
-.nested-dropdown {
-  position: relative;
-}
-
-.nested-dropdown .dropdown-menu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-}
-
-.nested-dropdown:hover .dropdown-menu {
-  display: block;
-  background-color: #f6f6f6;
-}
-
-.dropdown-menu.color-menu {
-  display: flex;
-  flex-direction: row;
-}
-
 .color-option #todo-header,
-#willdo-section {
+.willdo-section {
   display: flex;
   flex-direction: column;
 }
@@ -150,14 +198,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
-  height: 100vh;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 58%;
+  overflow-y: auto;
 }
 
 #todo-header,
-#willdo-section h1 {
+.willdo-section h1 {
   text-align: center;
 }
 
@@ -180,25 +226,24 @@
 .flex-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  height: 100vh;
-  overflow-y: auto;
+  height: 72vh;
 }
 
 .todo-card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  height: 100vh;
+  justify-content: space-evenly;
+  height: auto;
 }
 
 .card {
-  padding: 20px;
-  width: 399px;
+  width: 379px;
+
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 img {
@@ -208,24 +253,22 @@ img {
 }
 
 .image-container {
-  width: 80px;
-  width: 379px;
+  width: auto;
   /* flex: auto; */
   display: flex;
   justify-content: center;
 }
 
 .revert-button {
-  width: 100px;
-  height: 40px;
-  font-size: 25px;
-  border-radius: 30px;
-  background-color: white;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-  border: none;
-  padding: 5px;
+  display: block;
+  height: 30px;
+  width: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  line-height: 1;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .revert-button:hover {
@@ -233,19 +276,28 @@ img {
   color: white;
 }
 
-#willdo-section {
-  display: flex;
-  width: 40%;
-  height: 100vh;
-  background-color: black;
-  flex-direction: column;
+.willdo-section {
+  position: fixed;
+  top: 210px;
+  right: 53px;
+  bottom: 20px;
+  width: 38%; /* Adjust width as needed */
+  background-color: rgb(180, 180, 180);
+  border-radius: 20px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-#willdo-section h1 {
+.willdo-header {
+  padding: 20px;
+}
+
+.willdo-section h1 {
   color: white;
-  font-size: 45px;
-  font-family: "Pacifico";
+  font-size: 30px;
 }
 
 .willdo-card-container {
@@ -258,6 +310,8 @@ img {
 
 .list-item {
   display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .list-item button {
@@ -285,10 +339,7 @@ img {
 }
 
 .item-details {
-  padding-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  padding: 5px 20px 20px 20px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
@@ -300,6 +351,56 @@ img {
 
 .willdo-tot {
   color: white;
-  padding: 30px;
   font-family: "Lato";
+}
+
+@media (max-width: 1024px) {
+  .control-ctr {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .todo-container {
+    width: 100%;
+  }
+
+  .willdo-section {
+    width: 100%;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    position: relative;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column;
+  }
+
+  .todo-container {
+    width: 100%;
+  }
+
+  .willdo-section {
+    width: 100%;
+    margin-top: 20px;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  #todo-header h1 {
+    font-size: 30px;
+  }
+
+  .revert-button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
 }
